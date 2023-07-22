@@ -12,7 +12,7 @@ const GetHotelReviews = (hotel) => {
   console.log("Printing hotel Id fetch in Get Hotel Reviews : "+hotel.item.id);
 
   const retrieveAllReviews = async () => {
-    const response = await axios.get("http://localhost:8080/api/hotel/review/fetch?hotelId="+hotelId);
+    const response = await axios.get("http://localhost:9595/api/hotel/review/fetch?hotelId="+hotelId);
     return response.data;
   };
 

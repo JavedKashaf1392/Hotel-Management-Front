@@ -19,8 +19,8 @@ const HotelHeader = () => {
       progress: undefined,
     });
     sessionStorage.removeItem("active-hotel");
+    navigate("/home");
     window.location.reload(true);
-    navigate("home");
   };
 
   return (

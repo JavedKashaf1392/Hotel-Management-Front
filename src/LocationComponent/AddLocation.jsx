@@ -12,7 +12,7 @@ const AddLocation = () => {
     e.preventDefault();
     let data = { city, description };
 
-    fetch("http://localhost:8080/api/location/add", {
+    fetch("http://localhost:9595/api/location/add", {
       method: "POST",
       headers: {
         Accept: "application/json",

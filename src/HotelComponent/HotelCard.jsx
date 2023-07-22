@@ -7,7 +7,7 @@ const HotelCard = (hotel) => {
     <div className="col">
     <div class="card border-color rounded-card card-hover product-card custom-bg h-100">
        <img
-        src={"http://localhost:8080/api/hotel/" + hotel.item.image2}
+        src={"http://localhost:9595/api/hotel/" + hotel.item.image2}
         class="card-img-top rounded mx-auto d-block m-2"
         alt="img"
         style={{

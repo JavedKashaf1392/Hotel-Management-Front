@@ -6,7 +6,7 @@ const GetAllFacility = () => {
   const [facilities, setFacilities] = useState([]);
 
   const retrieveAllFacilities = async () => {
-    const response = await axios.get("http://localhost:8080/api/facility/fetch");
+    const response = await axios.get("http://localhost:9595/api/facility/fetch");
     return response.data;
   };
 

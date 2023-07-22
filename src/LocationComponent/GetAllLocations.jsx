@@ -6,7 +6,7 @@ const GetAllLocations = () => {
   const [locations, setLocations] = useState([]);
 
   const retrieveAllLocations = async () => {
-    const response = await axios.get("http://localhost:8080/api/location/fetch");
+    const response = await axios.get("http://localhost:9595/api/location/fetch");
     return response.data;
   };
 

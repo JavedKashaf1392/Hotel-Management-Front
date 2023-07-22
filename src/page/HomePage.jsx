@@ -36,14 +36,14 @@ const HomePage = () => {
   }, [locationId]);
   
   const retrieveAllHotels = async () => {
-    const response = await axios.get("http://localhost:8080/api/hotel/fetch");
+    const response = await axios.get("http://localhost:9595/api/hotel/fetch");
 
     return response.data;
   };
 
   const retrieveProductsByLocation = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/hotel/location?locationId=" + locationId
+      "http://localhost:9595/api/hotel/location?locationId=" + locationId
     );
 
     return response.data;

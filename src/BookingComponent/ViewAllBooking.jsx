@@ -18,7 +18,7 @@ const ViewAllBooking = () => {
 
   const retrieveAllBooking = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/book/hotel/fetch/all"
+      "http://localhost:9595/api/book/hotel/fetch/all"
     );
     console.log(response.data);
     return response.data;
@@ -68,7 +68,7 @@ const ViewAllBooking = () => {
                       <td>
                         <img
                           src={
-                            "http://localhost:8080/api/hotel/"+booking.hotelImage
+                            "http://localhost:9595/api/hotel/"+booking.hotelImage
                           }
                           class="img-fluid"
                           alt="product_pic"

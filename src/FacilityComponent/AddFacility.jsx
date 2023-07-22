@@ -12,7 +12,7 @@ const AddFacility = () => {
     e.preventDefault();
     let data = { name, description };
 
-    fetch("http://localhost:8080/api/facility/add", {
+    fetch("http://localhost:9595/api/facility/add", {
       method: "POST",
       headers: {
         Accept: "application/json",

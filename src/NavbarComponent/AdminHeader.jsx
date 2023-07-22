@@ -19,8 +19,9 @@ const AdminHeader = () => {
       progress: undefined,
     });
     sessionStorage.removeItem("active-admin");
-    window.location.reload(true);
+
     navigate("/home");
+       window.location.reload(true);
   };
 
   return (

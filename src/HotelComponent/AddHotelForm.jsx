@@ -9,7 +9,7 @@ const AddHotelForm = () => {
   let navigate = useNavigate();
 
   const retrieveAllLocations = async () => {
-    const response = await axios.get("http://localhost:8080/api/location/fetch");
+    const response = await axios.get("http://localhost:9595/api/location/fetch");
     return response.data;
   };
 
@@ -25,7 +25,7 @@ const AddHotelForm = () => {
   }, []);
 
   const retrieveAllHotelUsers = async () => {
-    const response = await axios.get("http://localhost:8080/api/user/hotel");
+    const response = await axios.get("http://localhost:9595/api/user/hotel");
     return response.data;
   };
 
@@ -75,18 +75,16 @@ const AddHotelForm = () => {
     formData.append("userId", hotel.userId);
 
     axios
-      .post("http://localhost:8080/api/hotel/add", formData)
+      .post("http://localhost:9595/api/hotel/add", formData)
       .then((result) => {
-        result.json().then((res) => {
-          console.log(res);
-  
-          console.log(res.responseMessage);
-             
+        debugger;
+        result.json().then((res) => {   
           navigate("/home");
                 
         });
         
       });
+
   };
 
   return (

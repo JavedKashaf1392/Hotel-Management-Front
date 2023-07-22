@@ -40,7 +40,7 @@ const AddHotelReview = () => {
 
   const retrieveHotel = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/hotel/id?hotelId=" + hotelId
+      "http://localhost:9595/api/hotel/id?hotelId=" + hotelId
     );
 
     return response.data;
@@ -69,7 +69,7 @@ const AddHotelReview = () => {
     console.log("Lets print location id here "+hotel.location.id);
 
     const response = await axios.get(
-      "http://localhost:8080/api/hotel/location?locationId="+locationId
+      "http://localhost:9595/api/hotel/location?locationId="+locationId
     );
     console.log(response.data);
     return response.data;
@@ -87,7 +87,7 @@ const AddHotelReview = () => {
       setUserId(user.id);
     let data = { userId, hotelId, star, review };
 
-    fetch("http://localhost:8080/api/hotel/review/add", {
+    fetch("http://localhost:9595/api/hotel/review/add", {
       method: "POST",
       headers: {
         Accept: "application/json",

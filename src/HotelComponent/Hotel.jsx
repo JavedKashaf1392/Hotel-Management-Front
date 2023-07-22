@@ -57,7 +57,7 @@ const Hotel = () => {
 
   const retrieveHotel = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/hotel/id?hotelId=" + hotelId
+      "http://localhost:9595/api/hotel/id?hotelId=" + hotelId
     );
 
     return response.data;
@@ -88,14 +88,14 @@ const Hotel = () => {
 
   const retrieveHotelsByLocation = async () => {
     const response = await axios.get(
-      "http://localhost:8080/api/hotel/location?locationId=" + locationId
+      "http://localhost:9595/api/hotel/location?locationId=" + locationId
     );
     console.log(response.data);
     return response.data;
   };
 
   const saveProductToCart = (userId) => {
-    fetch("http://localhost:8080/api/user/cart/add", {
+    fetch("http://localhost:9595/api/user/cart/add", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -126,8 +126,9 @@ const Hotel = () => {
   };
 
   const bookHotel = (e) => {
-
-    if(user == null) {
+    
+    if(Object.keys(user).length === 0) {
+      debugger;
       alert("Please login to book the hotels!!!");
       e.preventDefault();
     } else {
@@ -138,13 +139,14 @@ const Hotel = () => {
     formData.append("checkOut", booking.checkOut);
     formData.append("totalRoom", booking.totalRoom);
     formData.append("totalDay", booking.totalDay);
-
+    debugger;
     console.log(formData)
-
+    debugger;
     axios
-      .post("http://localhost:8080/api/book/hotel/", formData)
+      .post("http://localhost:9595/api/book/hotel/", formData)
       .then((result) => {
         result.json().then((res) => {
+          debugger;
           console.log(res);
           console.log(res.responseMessage);
           alert("Hotel Booked Successfully!!!")

@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:9595/api/book/hotel/",
   "name": "hotel-management-system",
   "version": "0.1.0",
   "private": true,

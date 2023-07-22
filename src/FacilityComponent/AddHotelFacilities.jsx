@@ -15,7 +15,7 @@ const AddHotelFacilities = () => {
   let navigate = useNavigate();
 
   const retrieveHotelFacilities = async () => {
-    const response = await axios.get("http://localhost:8080/api/facility/hotel?hotelId="+hotelId);
+    const response = await axios.get("http://localhost:9595/api/facility/hotel?hotelId="+hotelId);
     return response.data;
   };
 
@@ -31,7 +31,7 @@ const AddHotelFacilities = () => {
   }, []);
 
   const retrieveAllFacilities = async () => {
-    const response = await axios.get("http://localhost:8080/api/facility/fetch");
+    const response = await axios.get("http://localhost:9595/api/facility/fetch");
     return response.data;
   };
 
@@ -50,7 +50,7 @@ const AddHotelFacilities = () => {
     e.preventDefault();
     let data = { hotelId, facilityId };
 
-    fetch("http://localhost:8080/api/facility/hotel/add", {
+    fetch("http://localhost:9595/api/facility/hotel/add", {
       method: "POST",
       headers: {
         Accept: "application/json",

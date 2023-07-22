@@ -12,7 +12,7 @@ const GetHotelFacilities = (hotel) => {
   const [facilities, setFacilities] = useState([]);
 
   const retrieveAllFacilities = async () => {
-    const response = await axios.get("http://localhost:8080/api/facility/hotel?hotelId="+hotelId);
+    const response = await axios.get("http://localhost:9595/api/facility/hotel?hotelId="+hotelId);
     return response.data;
   };
 
