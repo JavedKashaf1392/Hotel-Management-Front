@@ -137,6 +137,7 @@ const Hotel = () => {
       alert("Please login to book the hotels!!!");
       e.preventDefault();
     } else {
+      e.preventDefault();
     await axios
     .post(
       "http://localhost:9595/api/book/hotel/save",
@@ -150,9 +151,7 @@ const Hotel = () => {
       },
     )
     .then(function (response) {
-      alert("hotel added successfully!!!");
-      debugger;
-        toast.success("Registered Successfully!!!", {
+        toast.success("you booked the hotel Successfully!!", {
         position: "top-center",
         autoClose: 1000,
         hideProgressBar: false,
@@ -161,6 +160,8 @@ const Hotel = () => {
         draggable: true,
         progress: undefined,
       });
+      navigate("/home");
+      // window.location.reload(true);
       console.log("Response is coming from backend data is here",response)
   
     });

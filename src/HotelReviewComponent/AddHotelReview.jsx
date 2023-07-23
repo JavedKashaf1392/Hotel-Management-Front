@@ -52,7 +52,6 @@ const AddHotelReview = () => {
   useEffect(() => {
     const getHotel = async () => {
         const retrievedHotel = await retrieveHotel();
-  
         setHotel(retrievedHotel.hotel);
       };
   

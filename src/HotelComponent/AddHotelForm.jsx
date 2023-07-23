@@ -235,7 +235,7 @@ const AddHotelForm = () => {
                 />
               </div>
 
-              {/* <div className="mb-3">
+              <div className="mb-3">
                 <label htmlFor="image1" className="form-label">
                   <b> Select Hotel Image 1</b>
                 </label>
@@ -247,9 +247,9 @@ const AddHotelForm = () => {
                   value={hotel.image1}
                   onChange={(e) => setSelectedImage1(e.target.files[0])}
                 />
-              </div> */}
+              </div>
 
-              {/* <div className="mb-3">
+              <div className="mb-3">
                 <label htmlFor="image2" className="form-label">
                   <b> Select Hotel Image 2</b>
                 </label>
@@ -261,9 +261,9 @@ const AddHotelForm = () => {
                   value={hotel.image2}
                   onChange={(e) => setSelectedImage2(e.target.files[0])}
                 />
-              </div> */}
+              </div>
 
-              {/* <div className="mb-3">
+              <div className="mb-3">
                 <label htmlFor="image3" className="form-label">
                   <b> Select Hotel Image 3</b>
                 </label>
@@ -275,7 +275,7 @@ const AddHotelForm = () => {
                   value={hotel.image3}
                   onChange={(e) => setSelectedImage3(e.target.files[0])}
                 />
-              </div> */}
+              </div>
 
               <button
                 type="submit"
