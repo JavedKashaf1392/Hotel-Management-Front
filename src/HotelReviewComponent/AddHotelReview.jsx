@@ -5,6 +5,9 @@ import HotelCarousel from "../HotelComponent/HotelCarousel";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import HotelCard from "../HotelComponent/HotelCard";
+import image1 from "../images/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg";
+import image2 from "../images/the-anam-_twiIcIsp2s-unsplash.jpg";
+import image3 from "../images/sasha-kaunas-TAgGZWz6Qg8-unsplash.jpg";
 
 const AddHotelReview = () => {
 
@@ -123,9 +126,9 @@ const AddHotelReview = () => {
            
       <HotelCarousel
       item={{
-        image1 : hotel.image1,
-        image2 : hotel.image2,
-        image3 : hotel.image3,
+        image1 :image1,
+        image2 :image2,
+        image3 :image3,
       }}
       />
           </div>

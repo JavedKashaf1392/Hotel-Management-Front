@@ -35,7 +35,7 @@ const ViewMyHotelBookings = () => {
         }}
       >
         <div className="card-header custom-bg-text text-center bg-color">
-          <h2>My Bookings</h2>
+          <h2>My Bookings Hotel</h2>
         </div>
         <div
           className="card-body"

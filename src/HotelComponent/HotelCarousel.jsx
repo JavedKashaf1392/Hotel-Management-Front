@@ -31,13 +31,13 @@ const HotelCarousel = (hotel) => {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={"http://localhost:9595/api/hotel/" + hotel.item.image1} className="d-block w-100" alt="..." />
+          <img src={ hotel.item.image1} className="d-block w-100" alt="..." />
         </div>
         <div className="carousel-item">
-          <img src={"http://localhost:9595/api/hotel/" + hotel.item.image2} className="d-block w-100" alt="..." />
+          <img src={  hotel.item.image2} className="d-block w-100" alt="..." />
         </div>
         <div className="carousel-item">
-          <img src={"http://localhost:9595/api/hotel/" + hotel.item.image3} className="d-block w-100" alt="..." />
+          <img src={ hotel.item.image3} className="d-block w-100" alt="..." />
         </div>
       </div>
       <button

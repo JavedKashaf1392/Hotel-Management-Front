@@ -9,11 +9,17 @@ import HotelCarousel from "./HotelCarousel";
 import GetHotelFacilities from "../FacilityComponent/GetHotelFacilities";
 import GetHotelReviews from "../HotelReviewComponent/GetHotelReviews";
 import { useNavigate } from "react-router-dom";
+import image1 from "../images/ciudad-maderas-MXbM1NrRqtI-unsplash.jpg";
+import image2 from "../images/edvin-johansson-rlwE8f8anOc-unsplash.jpg";
+import image3 from "../images/francesca-saraco-_dS27XGgRyQ-unsplash.jpg";
+import image4 from "../images/qui-nguyen-giL2fHNr3Lc-unsplash.jpg";
+
+
 
 const Hotel = () => {
   const { hotelId, locationId } = useParams();
 
-  let user = JSON.parse(sessionStorage.getItem("active-customer"));
+
   let admin = JSON.parse(sessionStorage.getItem("active-admin"));
 
   const [quantity, setQuantity] = useState("");
@@ -125,34 +131,39 @@ const Hotel = () => {
     });
   };
 
-  const bookHotel = (e) => {
-    
-    if(Object.keys(user).length === 0) {
-      debugger;
+  const bookHotel = async (e) => {
+    let user = JSON.parse(sessionStorage.getItem("active-customer"));
+    if(user == null) {
       alert("Please login to book the hotels!!!");
       e.preventDefault();
     } else {
-      const formData = new FormData();
-    formData.append("userId", user.id);
-    formData.append("hotelId", hotelId);
-    formData.append("checkIn", booking.checkIn);
-    formData.append("checkOut", booking.checkOut);
-    formData.append("totalRoom", booking.totalRoom);
-    formData.append("totalDay", booking.totalDay);
-    debugger;
-    console.log(formData)
-    debugger;
-    axios
-      .post("http://localhost:9595/api/book/hotel/", formData)
-      .then((result) => {
-        result.json().then((res) => {
-          debugger;
-          console.log(res);
-          console.log(res.responseMessage);
-          alert("Hotel Booked Successfully!!!")
-        });
-        
+    await axios
+    .post(
+      "http://localhost:9595/api/book/hotel/save",
+      {
+        "userId":user.id,
+       "checkIn":booking.checkIn,
+       "checkOut":booking.checkOut,
+       "hotelId":hotelId,
+       "totalRoom":booking.totalRoom,
+       "totalDay":booking.totalDay
+      },
+    )
+    .then(function (response) {
+      alert("hotel added successfully!!!");
+      debugger;
+        toast.success("Registered Successfully!!!", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
       });
+      console.log("Response is coming from backend data is here",response)
+  
+    });
     }
   };
 
@@ -173,9 +184,9 @@ const Hotel = () => {
            
       <HotelCarousel
       item={{
-        image1 : hotel.image1,
-        image2 : hotel.image2,
-        image3 : hotel.image3,
+        image1 : image1,
+        image2 : image2,
+        image3 : image3,
       }}
       />
           </div>

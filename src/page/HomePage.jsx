@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import HotelCard from "../HotelComponent/HotelCard";
 
+
 const HomePage = () => {
 
   const [hotels, setHotels] = useState([]);

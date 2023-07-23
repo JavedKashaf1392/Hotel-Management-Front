@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import LocationNavigator from "../LocationComponent/LocationNavigator";
 import HotelCarousel from "./HotelCarousel";
+import carousel3 from "../images/ciudad-maderas-MXbM1NrRqtI-unsplash.jpg";
 
 const HotelCard = (hotel) => {
   return (
     <div className="col">
     <div class="card border-color rounded-card card-hover product-card custom-bg h-100">
-       <img
-        src={"http://localhost:9595/api/hotel/" + hotel.item.image2}
+       <img src={carousel3}
         class="card-img-top rounded mx-auto d-block m-2"
         alt="img"
         style={{
